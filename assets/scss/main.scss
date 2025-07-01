@@ -1,0 +1,288 @@
+@use 'globals/index' as g;
+@use 'util/index' as u;
+@use 'variables' as *;
+@use 'sass:map';
+
+
+@include u.fontFace('spartan', '../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.woff2', 100 900);
+
+
+.wrappers__mains {
+  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-800;
+
+  @include u.breakpoint(large) {
+    inline-size: min(u.rem(1440), 100%);
+    grid-template-columns: minmax(u.rem(840), 1fr) minmax(u.rem(600), 1fr);
+    margin-inline: auto;
+    gap: 0;
+  }
+}
+
+.wrappers__headers {
+  position: relative;
+  inline-size: min(u.rem(1100), 100%);
+  block-size: clamp(22.5rem, 17.5568rem + 21.0909vw, 33.375rem);
+  background-image: url('../images/mobile-image-hero-1.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  padding: $space-600 clamp(1.51375rem, -0.8348rem + 10.0204vw, 3.96875rem);
+  background-color: rgba(0, 0, 0, 0.1);
+  background-blend-mode: multiply;
+
+  @include u.breakpoint(medium) {
+    background-image: url('../images/desktop-image-hero-1.jpg');
+  }
+  @include u.breakpoint(large) {
+    padding: $space-800;
+    gap: $space-700;
+  }
+}
+
+.button__main,
+.mains__button {
+  background-color: transparent;
+  block-size: fit-content;
+  @include u.breakpoint(large) {
+    display: none;
+  }
+}
+
+.button__gallery {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include u.breakpoint(large) {
+    inset-inline-end: u.rem(-160);
+  }
+}
+
+.button__room {
+  inline-size: clamp(3.5rem, 2.0651rem + 6.1224vw, 5rem);
+  block-size: clamp(3.5rem, 2.0651rem + 6.1224vw, 5rem);
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mains__logo {
+  block-size: fit-content;
+}
+
+.logo__room {
+  position: absolute;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+
+  @include u.breakpoint(large) {
+  // inset-inline-start: u.rem(65);
+    transform: translateX(0);
+    position: static;
+
+  }
+}
+
+.mains__menu {
+  position: absolute;
+  inset: 0;
+  inline-size: u.rem(.1);
+  block-size: min(u.rem(110), 100%);
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  padding-inline: clamp(1.51375rem, -0.8348rem + 10.0204vw, 3.96875rem);
+  translate: -100vw 0; 
+  transition:  all .5s ease-in-out;
+  @include u.breakpoint(large) {
+    inline-size: 100%;
+    translate: 0 0; 
+    opacity: 1;
+    position: static;
+    background-color: transparent;
+    block-size: fit-content;
+    justify-content: flex-end;
+    inset-block-start: u.rem(64);
+  }
+}
+
+.mains__menu--open {
+  inline-size: 100%;
+  translate: 0 0; 
+  opacity: 1;
+
+}
+
+// .button__main[aria-expanded='true'] {
+//   + .mains__menu {
+//     translate: 0;
+//   }
+// }
+//
+// .button__main[aria-expanded='false'] {
+//   + .mains__menu {
+//     translate: 0;
+//     @include u.breakpoint(large) {
+//       translate: 0;
+//     }
+//   }
+// }
+
+.button__close {
+  @include u.breakpoint(large) {
+    display: none;
+  }
+}
+
+.menu__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $space-400;
+  color: var(--black);
+  @include u.tgSize('spartan', $text-3, 600);
+  text-transform: lowercase;
+  line-height: 1;
+  @include u.breakpoint(large) {
+    color: var(--white);
+  }
+}
+
+.mains__description {
+  inline-size: clamp(19.4375rem, -0.2333rem + 83.9286vw, 40rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  align-items: center;
+  margin-inline: auto;
+  gap: $space-400;
+
+  @include u.breakpoint(large) {
+    inline-size: min(u.rem(600), 100%);
+  }
+}
+
+.mains__discover {
+
+  @include u.breakpoint(large) {
+    inline-size: min(u.rem(400), 100%);
+    margin-inline: auto;
+  }
+}
+
+.mains__shop {
+  display: grid;
+  gap: $space-200;
+}
+
+.mains__title {
+  @include u.tgSize('spartan', clamp(2.5rem, 2.0803rem + 1.9185vw, 3rem), 600);
+  letter-spacing: u.rem(-2);
+  color: var(--black);
+}
+
+.mains__leads {
+  @include u.tgSize('spartan', $text-3, 500);
+  color: var(--grey500);
+}
+
+.mains__now {
+  inline-size: min(u.rem(600), 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include u.breakpoint(medium) {
+    inline-size: min(u.rem(226), 100%)
+  }
+}
+
+.mains__subtitle {
+  @include u.tgSize('spartan', $text-4, 500);
+  letter-spacing: u.rem(12.5);
+  text-transform: uppercase;
+}
+
+.about__furniture {
+  display: grid;
+  gap: $space-600;
+  margin-block-start: $space-800;
+
+  @include u.breakpoint(large) {
+    block-size: min(u.rem(266), 100%);
+    grid-template-columns: minmax(u.rem(420), 1fr) minmax(u.rem(580), 1fr) minmax(u.rem(440), 1fr);
+    gap: 0;
+    margin-block-start: 0;
+  }
+}
+
+.about__left {
+  block-size: clamp(14.875rem, 11.6226rem + 14.8681vw, 18.75rem);
+  @include u.breakpoint(large) {
+    inline-size: 100%;
+  }
+}
+
+.left__image {
+  inline-size: min(u.rem(1200), 100%);
+  block-size: clamp(14.875rem, 11.6226rem + 14.8681vw, 18.75rem);
+  @include u.breakpoint(large) {
+    block-size: min(u.rem(266), 100%);
+  }
+}
+
+.right__image {
+  inline-size: min(u.rem(1200), 100%);
+  block-size: clamp(14.1875rem, 13.3482rem + 3.8369vw, 15.1875rem);
+  object-fit: cover;
+  object-position: 50% 30%;
+  filter: contrast(.7);
+  @include u.breakpoint(large) {
+    block-size: min(u.rem(266), 100%);
+  }
+}
+
+.about__our {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__description {
+  inline-size: clamp(19.4375rem, -0.2333rem + 83.9286vw, 40rem);
+  display: grid;
+  gap: $space-200;
+  margin-inline: auto;
+
+  @include u.breakpoint(large) {
+    inline-size: min(u.rem(484), 100%)
+  }
+}
+
+.about__title {
+  @include u.tgSize('spartan', clamp(0.875rem, 0.7701rem + 0.4796vw, 1rem), weight);
+  text-transform: uppercase;
+  letter-spacing: u.rem(7);
+}
+
+
+.about__lead {
+  @include u.tgSize('spartan', $text-4, 500);
+  color: var(--grey500);
+}
+
+
+
+.display__none {
+  display: none;
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/main.js" defer></script>
+    <title>Frontend Mentor | Room homepage</title>
+</head>
+
+<body>
+    <main class="wrappers__mains">
+        <header class="wrappers__headers">
+            <div class="mains__button"> 
+                <span id="nav-label" hidden>Navigation</span>
+                <button id="btn-open" type="button" class="button__main" aria-expanded="false" aria-labelledby="nav-label"><img class="image__button" src="./assets/images/icon-hamburger.svg" alt="" /></button>
+            </div>
+            <div class="mains__logo">
+                <img class="logo__room" src="./assets/images/logo.svg" alt="" />
+            </div>
+            <div class="mains__menu " role="dialog" aria-labelledby="nav-label"> <!-- display__none -->
+                <button type="button" class="button__close" >
+                    <img src="./assets/images/icon-close.svg" width="16" height="16" alt="" /></button>
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Shop</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">About</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <section class="button__gallery">
+                <button type="button" class="button__room button__room--left">
+                    <img class="button__image" src="./assets/images/icon-angle-left.svg" alt="" />
+                </button>
+                <button type="button" class="button__room button__room--right">
+                    <img class="button__image" src="./assets/images/icon-angle-right.svg" alt="" />
+                </button>
+            </section>
+        </header>
+        <section class="mains__description">
+            <section class="mains__discover">
+                <section class="mains__shop mains__shop--1">
+                    <h1 class="mains__title">Discover innovative ways to decorate</h1>
+                    <p class="mains__leads">
+                        We provide unmatched quality, comfort, and style for property
+                        owners across the country. Our experts combine form and function
+                        in bringing your vision to life. Create a room in your own style
+                        with our collection and make your property a reflection of you and
+                        what you love.
+                    </p>
+                </section>
+                <section class="mains__shop mains__shop--2 display__none">
+                    <h1 class="mains__title">We are available all across the globe</h1>
+                    <p class="mains__leads">
+                        With stores all over the world, it's easy for you to find
+                        furniture for your home or place of business. Locally, we’re in
+                        most major cities throughout the country. Find the branch nearest
+                        you using our store locator. Any questions? Don't hesitate to
+                        contact us today.
+                    </p>
+                </section>
+                <section class="mains__shop mains__shop--3 display__none">
+                    <h1 class="mains__title">Manufactured with the best materials</h1>
+                    <p class="mains__leads">
+                        Our modern furniture store provide a high level of quality. Our
+                        company has invested in advanced technology to ensure that every
+                        product is made as perfect and as consistent as possible. With
+                        three decades of experience in this industry, we understand what
+                        customers want for their home and office.
+                    </p>
+                </section>
+                <div class="mains__now">
+                    <h2 class="mains__subtitle">Shop now</h2>
+                    <img class="now__arrow" src="./assets/images/icon-arrow.svg" alt="" />
+                </div>
+            </section>
+        </section>
+    </main>
+    <aside class="about__furniture">
+        <div class="about__left">
+            <img class="left__image" src="./assets/images/image-about-dark.jpg" alt="" />
+        </div>
+        <section class="about__our">
+            <div class="about__description">
+                <h3 class="about__title">About our furniture</h3>
+                <p class="about__lead">
+                    Our multifunctional collection blends design and function to suit
+                    your individual taste. Make each room unique, or pick a cohesive
+                    theme that best express your interests and what inspires you. Find
+                    the furniture pieces you need, from traditional to contemporary
+                    styles or anything in between. Product specialists are available to
+                    help you create your dream space.
+                </p>
+            </div>
+        </section>
+        <div class="about__right">
+            <img class="right__image" src="./assets/images/image-about-light.jpg" alt="" />
+        </div>
+    </aside>
+</body>
+
+</html>

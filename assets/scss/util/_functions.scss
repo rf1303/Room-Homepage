@@ -1,0 +1,22 @@
+@use 'sass:math';
+
+@function rem($size) {
+
+  @if math.is-unitless($size) {
+     // $size / 16 = Xrem;
+    @return math.div($size, 16) + rem;
+  }
+  @else {
+    @error ' solo numeros en el campo REM';
+  }
+}
+
+@function em($size) {
+  @if math.is-unitless($size) {
+     // $size / 16 = Xrem;
+    @return math.div($size, 16) + em;
+  }
+  @else {
+    @error ' solo numeros en el campo EM';
+  }
+}
