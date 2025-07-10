@@ -219,10 +219,12 @@
   margin-block-start: $space-800;
 
   @include u.breakpoint(large) {
+    inline-size: min(u.rem(1440), 100%);
     block-size: min(u.rem(266), 100%);
     grid-template-columns: minmax(u.rem(420), 1fr) minmax(u.rem(580), 1fr) minmax(u.rem(440), 1fr);
     gap: 0;
     margin-block-start: 0;
+    margin-inline: auto;
   }
 }
 

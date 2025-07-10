@@ -327,10 +327,12 @@ p a {
 }
 @media (min-width: 68.75em) {
   .about__furniture {
+    inline-size: min(90rem, 100%);
     block-size: min(16.625rem, 100%);
     grid-template-columns: minmax(26.25rem, 1fr) minmax(36.25rem, 1fr) minmax(27.5rem, 1fr);
     gap: 0;
     margin-block-start: 0;
+    margin-inline: auto;
   }
 }
 
