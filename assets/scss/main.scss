@@ -6,15 +6,24 @@
 
 @include u.fontFace('spartan', '../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.woff2', 100 900);
 
+body {
+  @include u.breakpoint(xlarge) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
 
 .wrappers__mains {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   display: grid;
   grid-template-columns: 1fr;
   gap: $space-800;
 
   @include u.breakpoint(large) {
-    inline-size: min(u.rem(1440), 100%);
+    inline-size: 100%;
+    max-inline-size: u.rem(1440); 
     grid-template-columns: minmax(u.rem(840), 1fr) minmax(u.rem(600), 1fr);
     margin-inline: auto;
     gap: 0;
@@ -23,7 +32,7 @@
 
 .wrappers__headers {
   position: relative;
-  inline-size: min(u.rem(1100), 100%);
+  inline-size: min(u.rem(1100), 100%); 
   block-size: clamp(22.5rem, 17.5568rem + 21.0909vw, 33.375rem);
   background-image: url('../images/mobile-image-hero-1.jpg');
   background-size: cover;
@@ -34,6 +43,7 @@
   padding: $space-600 clamp(1.51375rem, -0.8348rem + 10.0204vw, 3.96875rem);
   background-color: rgba(0, 0, 0, 0.1);
   background-blend-mode: multiply;
+  transition: background-image 0.5s ease-in-out;
 
   @include u.breakpoint(medium) {
     background-image: url('../images/desktop-image-hero-1.jpg');
@@ -48,6 +58,7 @@
 .mains__button {
   background-color: transparent;
   block-size: fit-content;
+  cursor: pointer;
   @include u.breakpoint(large) {
     display: none;
   }
@@ -72,6 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mains__logo {
@@ -158,6 +170,27 @@
   }
 }
 
+.menu__link {
+  position: relative;
+  transition: transform .3s ease;
+   &::before {
+      position: absolute;
+      content: '';
+      inset-block-end: -40%;
+      inset-inline-start: 50%;
+      inline-size: 70%;
+      block-size: u.rem(2);
+      background-color: var(--white);
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform .5s ease;
+    }
+    &:hover::before {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+}
+
 .mains__description {
   inline-size: clamp(19.4375rem, -0.2333rem + 83.9286vw, 40rem);
   display: grid;
@@ -201,6 +234,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 
   @include u.breakpoint(medium) {
     inline-size: min(u.rem(226), 100%)
@@ -219,7 +253,7 @@
   margin-block-start: $space-800;
 
   @include u.breakpoint(large) {
-    inline-size: min(u.rem(1440), 100%);
+    inline-size: min(u.rem(1440), 100%); 
     block-size: min(u.rem(266), 100%);
     grid-template-columns: minmax(u.rem(420), 1fr) minmax(u.rem(580), 1fr) minmax(u.rem(440), 1fr);
     gap: 0;

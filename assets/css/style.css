@@ -109,15 +109,24 @@ p a {
   src: url("../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.woff2");
   font-weight: 100 900;
 }
+@media (min-width: 90.3125em) {
+  body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
 .wrappers__mains {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
 }
 @media (min-width: 68.75em) {
   .wrappers__mains {
-    inline-size: min(90rem, 100%);
+    inline-size: 100%;
+    max-inline-size: 90rem;
     grid-template-columns: minmax(52.5rem, 1fr) minmax(37.5rem, 1fr);
     margin-inline: auto;
     gap: 0;
@@ -137,6 +146,7 @@ p a {
   padding: 3rem clamp(1.51375rem, -0.8348rem + 10.0204vw, 3.96875rem);
   background-color: rgba(0, 0, 0, 0.1);
   background-blend-mode: multiply;
+  transition: background-image 0.5s ease-in-out;
 }
 @media (min-width: 43.75em) {
   .wrappers__headers {
@@ -154,6 +164,7 @@ p a {
 .mains__button {
   background-color: transparent;
   block-size: fit-content;
+  cursor: pointer;
 }
 @media (min-width: 68.75em) {
   .button__main,
@@ -183,6 +194,7 @@ p a {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mains__logo {
@@ -258,6 +270,26 @@ p a {
   }
 }
 
+.menu__link {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.menu__link::before {
+  position: absolute;
+  content: "";
+  inset-block-end: -40%;
+  inset-inline-start: 50%;
+  inline-size: 70%;
+  block-size: 0.125rem;
+  background-color: var(--white);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+.menu__link:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
 .mains__description {
   inline-size: clamp(19.4375rem, -0.2333rem + 83.9286vw, 40rem);
   display: grid;
@@ -305,6 +337,7 @@ p a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 @media (min-width: 43.75em) {
   .mains__now {
