@@ -16,16 +16,21 @@
 <body>
     <main class="wrappers__mains">
         <header class="wrappers__headers">
-            <div class="mains__button"> 
+            <div class="mains__button">
                 <span id="nav-label" hidden>Navigation</span>
-                <button id="btn-open" type="button" class="button__main" aria-expanded="false" aria-labelledby="nav-label"><img class="image__button" src="./assets/images/icon-hamburger.svg" alt="" /></button>
+                <button id="btn-open" type="button" class="button__main" aria-expanded="false"
+                    aria-labelledby="nav-label">
+                    <img class="image__button" src="./assets/images/icon-hamburger.svg" alt="" />
+                </button>
             </div>
             <div class="mains__logo">
                 <img class="logo__room" src="./assets/images/logo.svg" alt="" />
             </div>
-            <div class="mains__menu " role="dialog" aria-labelledby="nav-label" > <!-- display__none -->
-                <button type="button" class="button__close" >
-                    <img src="./assets/images/icon-close.svg" width="16" height="16" alt="" /></button>
+            <div class="mains__menu" role="dialog" aria-labelledby="nav-label">
+                <!-- display__none -->
+                <button type="button" class="button__close">
+                    <img src="./assets/images/icon-close.svg" width="16" height="16" alt="" />
+                </button>
                 <ul class="menu__list">
                     <li class="menu__item">
                         <a class="menu__link" href="#">Home</a>
@@ -42,10 +47,10 @@
                 </ul>
             </div>
             <section class="button__gallery">
-                <button type="button" class="button__room button__room--left">
+                <button type="button" class="button__room button__room--left" aria-label="Go to previous image">
                     <img class="button__image" src="./assets/images/icon-angle-left.svg" alt="" />
                 </button>
-                <button type="button" class="button__room button__room--right">
+                <button type="button" class="button__room button__room--right" aria-label="Go to next image" >
                     <img class="button__image" src="./assets/images/icon-angle-right.svg" alt="" />
                 </button>
             </section>
