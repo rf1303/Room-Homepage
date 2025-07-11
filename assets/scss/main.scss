@@ -123,8 +123,8 @@ body {
     position: static;
     background-color: transparent;
     block-size: fit-content;
-    justify-content: flex-end;
-    inset-block-start: u.rem(64);
+    justify-content: flex-start;
+    inset-block-start: u.rem(32);
   }
 }
 
@@ -192,7 +192,8 @@ body {
 }
 
 .mains__discover {
-
+  display: grid;
+  gap: $space-300;
   @include u.breakpoint(large) {
     inline-size: min(u.rem(400), 100%);
     margin-inline: auto;

@@ -235,8 +235,8 @@ p a {
     position: static;
     background-color: transparent;
     block-size: fit-content;
-    justify-content: flex-end;
-    inset-block-start: 4rem;
+    justify-content: flex-start;
+    inset-block-start: 2rem;
   }
 }
 
@@ -306,6 +306,10 @@ p a {
   }
 }
 
+.mains__discover {
+  display: grid;
+  gap: 1.5rem;
+}
 @media (min-width: 68.75em) {
   .mains__discover {
     inline-size: min(25rem, 100%);
