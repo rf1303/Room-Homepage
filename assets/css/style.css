@@ -99,7 +99,7 @@ p a {
   --grey50: hsl(0, 0%, 98%);
   --grey100: hsl(0, 0%, 94%);
   --grey200: hsl(0, 0%, 85%);
-  --grey500: hsl(0, 0%, 63%);
+  --grey500: #6b7280;
   --grey800: hsl(0, 0%, 27%);
   --grey300: #A19C9C;
 }
@@ -282,6 +282,7 @@ p a {
   inline-size: 70%;
   block-size: 0.125rem;
   background-color: var(--white);
+  border-radius: 2rem;
   transform: translateX(-50%) scaleX(0);
   transform-origin: center;
   transition: transform 0.5s ease;

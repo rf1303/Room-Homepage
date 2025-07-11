@@ -135,21 +135,6 @@ body {
 
 }
 
-// .button__main[aria-expanded='true'] {
-//   + .mains__menu {
-//     translate: 0;
-//   }
-// }
-//
-// .button__main[aria-expanded='false'] {
-//   + .mains__menu {
-//     translate: 0;
-//     @include u.breakpoint(large) {
-//       translate: 0;
-//     }
-//   }
-// }
-
 .button__close {
   @include u.breakpoint(large) {
     display: none;
@@ -181,6 +166,7 @@ body {
       inline-size: 70%;
       block-size: u.rem(2);
       background-color: var(--white);
+      border-radius: 2rem;
       transform: translateX(-50%) scaleX(0);
       transform-origin: center;
       transition: transform .5s ease;
